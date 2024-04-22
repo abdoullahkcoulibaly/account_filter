@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="account_filter.AccountReportFilterCustomJournal">
+        <Dropdown togglerClass="'btn btn-secondary'">
+            <t t-set-slot="toggler">
+                <i class="fa fa-book me-1"/>Filtrer par:
+                <t t-esc="selectedItems.join(', ').toUpperCase()"/>
+
+            </t>
+
+            <t t-foreach="controller.options.filter_list" t-as="filter" t-key="filter_index">
+                <DropdownItem
+                        class="{ 'selected': selectedItems.includes(filter.id) }"
+                        onSelected="() => this.customFilter(filter)"
+                >
+                    <t t-esc="filter.name"/>
+                </DropdownItem>
+
+            </t>
+        </Dropdown>
+    </t>
+</templates>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="account_filter.AccountReportFiltersCustomizable"
+       t-inherit="account_reports.AccountReportFiltersCustomizable" t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_journal']" position="before">
+            <t t-call="account_filter.AccountReportFilterCustomJournal"/>
+        </xpath>
+    </t>
+</templates>
